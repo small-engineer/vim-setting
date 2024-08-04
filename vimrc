@@ -1,4 +1,3 @@
-
 " 基本設定
 set nocompatible
 syntax on
@@ -31,6 +30,8 @@ set noswapfile
 autocmd FileType c setlocal cinoptions=(0
 autocmd FileType c setlocal formatoptions=croql
 autocmd FileType c setlocal comments=s1:/*,mb:*,ex:*/,://
+inoremap ( ()<Left>
+inoremap { {<CR><CR>}<Esc>O
 
 " コンパイルと実行のマッピング
 nnoremap <F5> :w<CR>:!gcc % -o %:r && (./%:r; echo -n "Press Enter to continue..."; read line)<CR>
@@ -38,9 +39,6 @@ nnoremap <F5> :w<CR>:!gcc % -o %:r && (./%:r; echo -n "Press Enter to continue..
 " ワイルドメニューとバックスペースの設定
 set wildmenu
 set backspace=indent,eol,start
-
-" C言語の雛形を挿入
-autocmd BufNewFile *.c exec ":Stdheader" | exec "normal o\nint\tmain(int argc, char *argv[])\n{\n\t\n}\n"
 
 " vim-plugを初期化
 call plug#begin('~/.vim/plugged')
@@ -55,5 +53,5 @@ Plug 'scrooloose/nerdcommenter'    " コードコメントの管理
 call plug#end()
 
 " 42headerの設定
-let g:user42 = 'ywakamy'
-let g:mail42 = 'wakamiya626@gmail.com'
+let g:user42 = 'ywakamiy'
+let g:mail42 = 'ywakamiy@student.42tokyo.jp'
